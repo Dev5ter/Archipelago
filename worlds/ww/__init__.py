@@ -1,3 +1,4 @@
+from typing import Any, Dict
 from .Regions import wind_waker_regions as wwr, mandatory_connections as mc, link_ww_structures
 from .Locations import WindWakerAchievement, achievement_table
 from .Rules import set_rules as _ww_set_rules, completion_rules as _ww_completion_rules
@@ -5,7 +6,20 @@ from .Items import WindWakerItem, item_table
 from .Options import wind_waker_options
 
 from BaseClasses import ItemClassification, Region, Entrance, Item, Tutorial
-from ..AutoWorld import World, WebWorld
+from worlds.AutoWorld import World, WebWorld
+
+from worlds.LauncherComponents import Component, components, Type, SuffixIdentifier, launch_subprocess
+from multiprocessing import Process
+
+
+def run_client():
+    print('Running WW Client')
+    from .WWClient import main
+    launch_subprocess(main, name="WindWakerClient")
+
+
+components.append(Component('Wind Waker Client', 'WindWakerClient', func=run_client, component_type=Type.CLIENT, file_identifier=SuffixIdentifier('.apww')))
+
 
 class WindWakerWebWorld(WebWorld):
     theme = "ocean"
@@ -29,14 +43,14 @@ class WindWakerWorld(World):
     The Default Victory is to Beat Ganondorf.
     """
     game: str = "Wind Waker"
-    options = wind_waker_options
+    option_definitions = wind_waker_options
     topology_present = True
     remote_items: bool = True
 
     item_name_to_id = {name: data.code for name, data in item_table.items()}
     location_name_to_id = {name: data.id for name, data in achievement_table.items()}
 
-    data_version: int = 0
+    data_version: int = 237
 
     web = WindWakerWebWorld()
 
@@ -49,7 +63,6 @@ class WindWakerWorld(World):
             'player_id': self.player,
             'structures': {exit: self.world.get_entrance(exit, self.player).connected_region.name for exit in exits},
             'advancement_goal': self.world.advancement_goal[self.player].value,
-            'death_link': bool(self.world.death_link[self.player].value)
         }
 
     def generate_basic(self):
@@ -96,3 +109,9 @@ class WindWakerWorld(World):
     def set_rules(self):
         _ww_set_rules(self.multiworld, self.player)
         _ww_completion_rules(self.multiworld, self.player)
+
+    def fill_slot_data(self) -> Dict[str, Any]:
+        return {
+            'death_link': self.multiworld.death_link[self.player].value,
+        }
+

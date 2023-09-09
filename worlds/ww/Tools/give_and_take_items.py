@@ -1,4 +1,4 @@
-import dolphin_memory_engine as dme
+from ..inc.packages import dolphin_memory_engine as dme
 from .itemTable import item_table as IT, treasure_charts as TC, letters, spoils
 import time
 

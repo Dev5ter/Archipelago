@@ -1,6 +1,6 @@
 import asyncio
-import dolphin_memory_engine as dme
-from .give_and_take_items import * 
+from ..inc.packages import dolphin_memory_engine as dme
+from .give_and_take_items import *
 from ..Items import lookup_id_to_name
 from .itemTable import item_table as IT, treasure_charts as TC, spoils, songs, letters
 

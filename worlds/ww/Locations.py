@@ -74,7 +74,7 @@ achievement_table: Dict[str, AchievementData] = {
     "Forbidden Woods - Locked in Basement Trunk": AchievementData(0x238038, "Forbidden Woods - Basement"),
     "Forbidden Woods - Big Key Chest": AchievementData(0x238039, "Forbidden Woods - Basement"),
     "Forbidden Woods - Double Mothula": AchievementData(0x23803A, "Forbidden Woods - Boss Arena"),
-    "Forbidden Woods - Kalles Demos Heart Container": AchievementData(0x23803B, "Forbidden Woods - Boss Arena"),
+    "Forbidden Woods - Kalle Demos Heart Container": AchievementData(0x23803B, "Forbidden Woods - Boss Arena"),
 
     "Greatfish - Hidden Chest": AchievementData(0x23803C, "The Great Sea"),
 

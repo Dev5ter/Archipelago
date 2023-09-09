@@ -1,6 +1,6 @@
 from BaseClasses import MultiWorld
-from ..generic.Rules import set_rule
-from ..AutoWorld import LogicMixin
+from worlds.generic.Rules import set_rule
+from worlds.AutoWorld import LogicMixin
 from BaseClasses import MultiWorld
 
 class WindWakerLogic(LogicMixin):
@@ -158,7 +158,7 @@ def set_rules(world: MultiWorld, player: int):
     set_rule(world.get_entrance("Forbidden Woods - Basement Entrance", player), lambda state: state.has("Boomerang", player))
     set_rule(world.get_location("Forbidden Woods - Tingle Chest", player), lambda state: state.has("Bombs", player))
     set_rule(world.get_location("Forbidden Woods - Double Mothula", player), lambda state: state._ww_kill_fw_bulbs(player))
-    set_rule(world.get_location("Forbidden Woods - Kalles Demos Heart Container", player), lambda state: state.has("Boomerang", player) and state._ww_can_defeat_enemies(player) and state.has("FW Big Key", player))
+    set_rule(world.get_location("Forbidden Woods - Kalle Demos Heart Container", player), lambda state: state.has("Boomerang", player) and state._ww_can_defeat_enemies(player) and state.has("FW Big Key", player))
 
     set_rule(world.get_location("Greatfish - Hidden Chest", player), lambda state: state.has("Deku Leaf", player))
     
@@ -204,7 +204,7 @@ def set_rules(world: MultiWorld, player: int):
     set_rule(world.get_location("Earth Temple - Staflos Mini Boss", player), lambda state: state.has("ET Small Key", player, 3) and state._ww_defeat_staflos(player))
     set_rule(world.get_entrance("Earth Temple - Basement Entrance", player), lambda state: state.has("Progressive Shield", player, 2))
     set_rule(world.get_location("Earth Temple - Tingle Chest", player), lambda state: state.has("Bombs", player))
-    set_rule(world.get_entrance("Earth Temple - Song Stone", player), lambda state: state.has("Earth God Lyrics", player))
+    set_rule(world.get_entrance("Earth Temple - Song Stone", player), lambda state: state.has("Earth God's Lyrics", player))
     set_rule(world.get_location("Earth Temple - Floormaster Room Fight", player), lambda state: state.has("Progressive Bow", player) or state.has("Progressive Sword", player))
     set_rule(world.get_entrance("Earth Temple - 2nd Locked Door", player), lambda state: state.has("ET Small Key", player, 3) and state.has("Skull Hammer", player))
     set_rule(world.get_location("Earth Temple - Big Key Chest", player), lambda state: state._ww_cursed_bubbles(player))
@@ -214,10 +214,10 @@ def set_rules(world: MultiWorld, player: int):
     set_rule(world.get_entrance("Wind Temple - HUB Room Entrance", player), lambda state: state.has("Deku Leaf", player))
     set_rule(world.get_location("Wind Temple - Tingle Chest", player), lambda state: state.has("Bombs", player))
     set_rule(world.get_location("Wind Temple - Behind Stone Head", player), lambda state: state.has("Hookshot", player))
-    set_rule(world.get_location("Wind Temple - Big Key Chest", player), lambda state: state.has("Wind Gods Aria", player))
+    set_rule(world.get_location("Wind Temple - Big Key Chest", player), lambda state: state.has("Wind God's Aria", player))
     set_rule(world.get_location("Wind Temple - Wizzrobe Mini Boss", player), lambda state: state.has("WT Small Key", player, 2))
     set_rule(world.get_entrance("Wind Temple - Basement Entrance", player), lambda state: state.has("WT Small Key", player, 2) and state.has("Hookshot", player))
-    set_rule(world.get_entrance("Wind Temple - Boss Arena Entrance", player), lambda state: state.has("WT Big Key", player) and state.has("Wind Gods Aria", player))
+    set_rule(world.get_entrance("Wind Temple - Boss Arena Entrance", player), lambda state: state.has("WT Big Key", player) and state.has("Wind God's Aria", player))
 
     set_rule(world.get_entrance("Ganons Tower Entrance", player), lambda state: state.has("Progressive Sword", player, 4) and (state.has("Deku Leaf", player) or state.has("Hookshot", player)))
 

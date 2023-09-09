@@ -27,14 +27,15 @@ The same original Green/Red Rupee ROM works all the time (as long as you start a
 
 The wwrando for can be found [here](https://github.com/Dev5ter/wwrando/releases).
 
-Their is a guide on how to install it [here](https://github.com/Dev5ter/wwrando).
+There is a guide on how to install it via source code [here](https://github.com/Dev5ter/wwrando).
+Now though, you can run the wwrando via an .exe on the latest release!
 
 # Running the WWRANDO
-The settings options on this are NOT going to affect what Archipelago Server cares about. The item checks boxes aren't really affecting anything.
+The settings options on this are NOT going to affect what Archipelago Server cares about MOSTLY. The item checks boxes aren't really affecting anything.
 This is where you can pick your sprite. A list of downloadable sprites can be found [here](https://github.com/Sage-of-Mirrors/Custom-Wind-Waker-Player-Models).
 I did not make any of these. This is a collective of a community effort.
 
-It is also worth noting that if you move anything to your starting items, you WILL start with that BUT Archipelago will not recognize that.
+IMPORTANT: It is also worth noting that if you move anything to your starting items, you WILL start with that BUT Archipelago will not recognize that.
 Therefore, the items you start with will still techincally be in the game, so just leave them all alone for smooth results.
 
 # Dolphin
@@ -45,9 +46,13 @@ I've heard some issues about older versions of Dolphin crash while running Wind 
 Dolphin MUST be running with the game open and loaded BEFORE you start the client.
 The Client will not be able to interact with the game if you do not have Dolphin loaded and ready FIRST.
 
+# WW.apworld
+There is now an .apworld file for Wind Waker! It can be found [here](https://github.com/Dev5ter/ww-apworld/releases).
+To run this you need to drop the dolphin-memory-engine folder in [Arch Install]/lib folder. You also need to drop the .apworld file itself in the [Arch Install]/lib/worlds folder. 
+
 # The WW Client
 This means the client is really responsible for giving the player all the items, since the chests just have rupees.
-The client is still in early development, but it technically works. It needs a full game test though.
+The client is still in early development, but it technically works. It needs some full game tests though.
 As far as how the user interacts with the client it is exactly the same as the CommonClient.
 I didn't add any extra commands or things such as that.
 

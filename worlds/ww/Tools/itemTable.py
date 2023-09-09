@@ -105,7 +105,7 @@ songs = [
     "Winds Requiem", 
     "Ballad of the Gales", 
     "Command Melody", 
-    "Earth God Lyrics", 
-    "Wind Gods Aria", 
+    "Earth God's Lyrics", 
+    "Wind God's Aria", 
     "Song of Passing"
 ]
