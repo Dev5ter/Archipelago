@@ -241,3 +241,4 @@ async def ww_item_giver(ctx):
                     #Defeat Ganon (Victory)
                 await asyncio.sleep(3)
         await asyncio.sleep(3)
+

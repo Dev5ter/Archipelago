@@ -28,7 +28,7 @@ class WWCommonContext(CommonContext):
         self.auth = None
         self.client = None
         self.locations_checked = []
-        #self.items_received = []
+        self.items_received = []
         self.is_connected = False
         self.send_index = 0
         self.server_version: Version = Version(4, 2, 0)
@@ -65,6 +65,9 @@ class WWCommonContext(CommonContext):
         if cmd == "Connected":
             if 'death_link' in args['slot_data']:
                 Utils.async_start(self.update_death_link(bool(args['slot_data']['death_link'])))
+            
+        if cmd == "ReceivedItems" and 'items' in args:
+            self.items_received = args['items']
             
         return super().on_package(cmd, args)
 
@@ -114,6 +117,7 @@ def main():
                 await asyncio.sleep(5)
         logger.info("Dolphin Connected")
 
+        await asyncio.sleep(3)
         location_watcher = asyncio.create_task(ww_location_watcher(ctx), name="WWProgressionWatcher")
         item_giver = asyncio.create_task(ww_item_giver(ctx), name="ItemGiver")
         item_check = asyncio.create_task(item_checker(ctx), name="WWItemChecker")
