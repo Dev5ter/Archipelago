@@ -175,7 +175,7 @@ location_table: list[Location] = [  # 240/254/304
     Location("Forbidden Woods - Tall Room Before Mini-Boss", 0x4, True, False, False, -1, False, -1, False, 12),
     Location("Forbidden Woods - Double Mothula"   , 0x4, True, False, False, -1, False, -1, False, 14),
     Location("Forbidden Woods - Tingle Chest"     , 0x4, True, False, False, -1, False, -1, False, 15),
-    Location("Forbidden Woods - Kalles Demos Heart Container"  , 0x4, False, True, False, -1, False, -1, False, 21),
+    Location("Forbidden Woods - Kalle Demos Heart Container"  , 0x4, False, True, False, -1, False, -1, False, 21),
 
     #Stage 0x5 (Tower of the Gods) 14 FORMATTED
     Location("Tower of Gods - Big Key Chest"   , 0x5, True, False, False, -1, False, -1, False, 0),

@@ -65,11 +65,6 @@ class WWCommonContext(CommonContext):
         if cmd == "Connected":
             if 'death_link' in args['slot_data']:
                 Utils.async_start(self.update_death_link(bool(args['slot_data']['death_link'])))
-            
-        if cmd == "ReceivedItems" and 'items' in args:
-            self.items_received = args['items']
-            
-        return super().on_package(cmd, args)
 
 
 async def ww_location_watcher(ctx: WWCommonContext):
