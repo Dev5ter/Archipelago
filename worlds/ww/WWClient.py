@@ -96,9 +96,7 @@ def main():
         
         while not ctx.auth:
             await asyncio.sleep(0.01)
-
-        if 'DeathLink' in ctx.tags:
-            death = asyncio.create_task(death_link_watch(ctx))
+            
 
         logger.info("Attempting to connect to Dolphin")
         check: bool = False
@@ -117,15 +115,17 @@ def main():
         item_giver = asyncio.create_task(ww_item_giver(ctx), name="ItemGiver")
         item_check = asyncio.create_task(item_checker(ctx), name="WWItemChecker")
 
+        if 'DeathLink' in ctx.tags:
+            death = asyncio.create_task(death_link_watch(ctx))
+            await death
+
         await ctx.exit_event.wait()
         ctx.server_address = None
 
         await location_watcher
         await item_giver
         await item_check
-        
-        if 'DeathLink' in ctx.tags:
-            await death
+
         await ctx.shutdown()
     
     import colorama

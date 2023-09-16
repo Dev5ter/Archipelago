@@ -63,7 +63,7 @@ achievement_table: Dict[str, AchievementData] = {
     "Forbidden Woods - In Bottom Tree": AchievementData(0x23802D, "Forbidden Woods - Pre HUB Room"),
     "Forbidden Woods - Climb to Top": AchievementData(0x23802E, "Forbidden Woods - Pre HUB Room"),
     "Forbidden Woods - Hole in Tree": AchievementData(0x23802F, "Forbidden Woods - Pre HUB Room"),
-    "Forbidden Woods - In Morphs Pit": AchievementData(0x238030, "Forbidden Woods - HUB Room"),
+    "Forbidden Woods - In Morths Pit": AchievementData(0x238030, "Forbidden Woods - HUB Room"),
     "Forbidden Woods - Vine Maze Left": AchievementData(0x238031, "Forbidden Woods - HUB Room"),
     "Forbidden Woods - Vine Maze Right": AchievementData(0x238032, "Forbidden Woods - HUB Room"),
     "Forbidden Woods - Tall Room Before Mini-Boss": AchievementData(0x238033, "Forbidden Woods - Past Locked Door"),
@@ -105,8 +105,8 @@ achievement_table: Dict[str, AchievementData] = {
     "Mother & Child - Interior": AchievementData(0x238052, "Inside Mother & Child"),
 
     "Fire Mountain - Cave": AchievementData(0x238053, "Fire Mountain Cave"),
-    "Fire Mountain - Lookout Platform - Free": AchievementData(0x238054, "The Great Sea"),
-    "Fire Mountain - Lookout Platform - Cannon": AchievementData(0x238055, "The Great Sea"),
+    "Fire Mountain - Free Platform": AchievementData(0x238054, "The Great Sea"),
+    "Fire Mountain - Cannon Platform": AchievementData(0x238055, "The Great Sea"),
     #"Fire Mountain - Big Octo": AchievementData(0x238056, "The Great Sea"),
 
     "Ice Ring - Frozen Chest": AchievementData(0x238057, "Ice Ring Cave"),
@@ -174,7 +174,7 @@ achievement_table: Dict[str, AchievementData] = {
     "Stone Watcher - Cannon Platform": AchievementData(0x23808B, "The Great Sea"),
 
     "Islet of Steel - Cave": AchievementData(0x23808C, "Islet of Steel"),
-    "Islet of Steel - Defeat Platform": AchievementData(0x23808D, "The Great Sea"),
+    "Islet of Steel - Enemy Platform": AchievementData(0x23808D, "The Great Sea"),
     
     "Overlook - Cave": AchievementData(0x23808E, "Overlook Cave"),
     
@@ -216,9 +216,9 @@ achievement_table: Dict[str, AchievementData] = {
 
     "Shark Island - Cave": AchievementData(0x2380AC, "Shark Island Cave"),
 
-    "Cliff Platue - Cave": AchievementData(0x2380AD, "Cliff Platue Cave"),
-    "Cliff Platue - Upper": AchievementData(0x2380AE, "Cliff Platue Upper"),
-    "Cliff Platue - Free Platform": AchievementData(0x2380AF, "The Great Sea"),
+    "Cliff Plateau - Cave": AchievementData(0x2380AD, "Cliff Plateau Cave"),
+    "Cliff Plateau - Upper": AchievementData(0x2380AE, "Cliff Plateau Upper"),
+    "Cliff Plateau - Free Platform": AchievementData(0x2380AF, "The Great Sea"),
 
     "Crescent Moon - Chest": AchievementData(0x2380B0, "The Great Sea"),
     "Crescent Moon - Submarine": AchievementData(0x2380B1, "Crescent Moon Submarine"),

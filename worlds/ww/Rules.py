@@ -97,7 +97,7 @@ class WindWakerLogic(LogicMixin):
         return ((self.has("Boomerang", player) or self.has("Deku Leaf", player)) and self.has("Progressive Sword", player)) or \
                  self.has("Progressive Bow", player) or self.has("Bombs", player) or self.has("Skull Hammer", player)
 
-    def _ww_cliff_platue_cave(self, player: int):
+    def _ww_cliff_plateau_cave(self, player: int):
         return self.has("Progressive Sword", player) or self.has("Boomerang", player) or self.has("Skull Hammer", player) or self.has("Hookshot", player) or \
                self.has("Bombs", player) or self.has("Progressive Bow", player) or (self.has("Deku Leaf", player) and self.has("Grappling Hook", player))
 
@@ -188,7 +188,7 @@ def set_rules(world: MultiWorld, player: int):
     set_rule(world.get_entrance("Mother & Child Warp Point", player), lambda state: state.has("Wind Waker", player) and state.has("Ballad of the Gales", player))
 
     set_rule(world.get_location("Fire Mountain - Cave", player), lambda state: state.has("Progressive Bow", player, 2))
-    set_rule(world.get_location("Fire Mountain - Lookout Platform - Cannon", player), lambda state: state._ww_destroy_cannons(player))
+    set_rule(world.get_location("Fire Mountain - Cannon Platform", player), lambda state: state._ww_destroy_cannons(player))
     #set_rule(world.get_location("Fire Mountain - Big Octo", player), lambda state: state._ww_defeat_big_octos(player))
 
     set_rule(world.get_entrance("Ice Ring Cave Entrance", player), lambda state: state.has("Progressive Bow", player, 2))
@@ -245,7 +245,7 @@ def set_rules(world: MultiWorld, player: int):
     set_rule(world.get_location("Stone Watcher - Cannon Platform", player), lambda state: state._ww_destroy_cannons(player))
 
     set_rule(world.get_location("Islet of Steel - Cave", player), lambda state: state.has("Wind Waker", player) and state.has("Winds Requiem", player) and state.has("Bombs", player))
-    set_rule(world.get_location("Islet of Steel - Defeat Platform", player), lambda state: state.has("Progressive Bow", player) or state.has("Hookshot", player))
+    set_rule(world.get_location("Islet of Steel - Enemy Platform", player), lambda state: state.has("Progressive Bow", player) or state.has("Hookshot", player))
     
     set_rule(world.get_location("Overlook - Cave", player), lambda state: state.has("Hookshot", player) and (state.has("Progressive Sword", player) or state.has("Progressive Bow", player, 3) or \
                                                                           state.has("Skull Hammer", player)) and state.has("Wind Waker", player) and state.has("Winds Requiem", player))
@@ -280,8 +280,8 @@ def set_rules(world: MultiWorld, player: int):
 
     set_rule(world.get_location("Shark Island - Cave", player), lambda state: state.has("Iron Boots", player) and state.has("Skull Hammer", player))
 
-    set_rule(world.get_location("Cliff Platue - Cave", player), lambda state: state._ww_cliff_platue_cave(player))
-    set_rule(world.get_location("Cliff Platue - Upper", player), lambda state: state._ww_cliff_upper(player))
+    set_rule(world.get_location("Cliff Plateau - Cave", player), lambda state: state._ww_cliff_plateau_cave(player))
+    set_rule(world.get_location("Cliff Plateau - Upper", player), lambda state: state._ww_cliff_upper(player))
 
     set_rule(world.get_location("Crescent Moon - Submarine", player), lambda state: state._ww_hs_sub(player) or state.has("Bombs", player))
 
