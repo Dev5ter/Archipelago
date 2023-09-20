@@ -113,11 +113,11 @@ async def ww_item_giver(ctx):
                         give_link_song(2)
                         ctx.send_index += 1
                         continue
-                    if name == "Earth God Lyrics":
+                    if name == "Earth God's Lyrics":
                         give_link_song(3)
                         ctx.send_index += 1
                         continue
-                    if name == "Wind Gods Aria":
+                    if name == "Wind God's Aria":
                         give_link_song(4)
                         ctx.send_index += 1
                         continue
