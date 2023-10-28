@@ -118,7 +118,7 @@ def set_rules(world: MultiWorld, player: int):
     set_rule(world.get_location("Outset - Savage Labryinth Floor 50", player), lambda state: state._ww_can_do_savage_fifty(player))
     set_rule(world.get_location("Outset - Give Orca 10 Knights Crest", player), lambda state: state._ww_can_loot_spoils(player) and (state.has("Triforce Shard", player, 8) or (state.has("Iron Boots", player) and \
                                                                                               state.has("Skull Hammer", player)) or (state.has("Wind Waker", player) and state.has("Winds Reqium", player) and \
-                                                                                             (state.has("Hookshot", player) or state.has("Power Bracelets", player)))))
+                                                                                             (state.has("Hookshot", player) or state.has("Power Bracelets", player)))) and state.has("Progressive Sword", player))
 
     set_rule(world.get_entrance("Windfall - Potion Shop Entrance", player), lambda state: state._ww_can_loot_spoils(player))
     set_rule(world.get_entrance("Windfall - Lenzo Upper Entrance", player), lambda state: state.has("Progressive Picto Box", player))
@@ -199,7 +199,7 @@ def set_rules(world: MultiWorld, player: int):
 
     set_rule(world.get_entrance("Headstone Island Entrance", player), lambda state: state.has("Power Bracelets", player) and state.has("Command Melody", player) and state.has("Wind Waker", player))
     set_rule(world.get_location("Earth Temple - Transparent Chest in 1st Crypt", player), lambda state: state.has("Skull Hammer", player))
-    set_rule(world.get_location("Earth Temple - Behind Destructable Walls", player), lambda state: state.has("Progressive Shield", player, 2))
+    set_rule(world.get_location("Earth Temple - Behind Destructable Walls", player), lambda state: state.has("Progressive Shield", player, 2) and state.has("Skull Hammer", player))
     set_rule(world.get_entrance("Earth Temple - Left Side Entrance", player), lambda state: state.has("ET Small Key", player, 2) and state.has("Progressive Bow", player, 2))
     set_rule(world.get_location("Earth Temple - Staflos Mini Boss", player), lambda state: state.has("ET Small Key", player, 3) and state._ww_defeat_staflos(player))
     set_rule(world.get_entrance("Earth Temple - Basement Entrance", player), lambda state: state.has("Progressive Shield", player, 2))

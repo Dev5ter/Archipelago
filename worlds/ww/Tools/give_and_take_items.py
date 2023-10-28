@@ -1,3 +1,7 @@
+# Used for testing purposes, just ignore and leave commented
+# from itemTable import item_table as IT, treasure_charts as TC, letters, spoils
+# import dolphin_memory_engine as dme
+
 from ..inc.packages import dolphin_memory_engine as dme
 from .itemTable import item_table as IT, treasure_charts as TC, letters, spoils
 import time
@@ -180,23 +184,20 @@ def give_hero_charm():
     dme.write_byte(0x803C4CC0, 1)
 
 def give_pearl(pearl: str):
-    address1 = 0x803C4CC7
-    address2 = 0x803C5240
-    value = dme.read_byte(address1)
-    place = dme.read_byte(address2)
+    address = 0x803C4CC7
+    value = dme.read_byte(address)
+
+    # Checks Pearl and gives proper one
     if pearl == "Din's Pearl":
-        dme.write_byte(address1, value | 2)
-        place += 128
-        dme.write_byte(address2, place)
+        dme.write_byte(address, value | 2)
     elif pearl == "Nayru's Pearl":
-        dme.write_byte(address1, value | 1)
-        place += 16
-        dme.write_byte(address2, place)
+        dme.write_byte(address, value | 1)
     elif pearl == "Farore's Pearl":
-        dme.write_byte(address1, value | 4)
-        place += 64
-        dme.write_byte(address2, place)
-    if place == 208:
+        dme.write_byte(address, value | 4)
+
+    # Checks if you have all three to raise TotG
+    if (dme.read_byte(address) & 0x7):
+        dme.write_byte(0x803C5240, 0xD0)
         dme.write_byte(0x803C524A, 64)
 
 def give_ghost_ship():
