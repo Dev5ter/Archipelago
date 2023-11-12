@@ -178,7 +178,7 @@ def set_rules(world: MultiWorld, player: int):
     set_rule(world.get_location("Tower of Gods - Gohdan Heart Container", player), lambda state: state.has("TotG Big Key", player) and state.has("Deku Leaf", player))
 
     set_rule(world.get_entrance("Hyrule Entrance", player), lambda state: state.has("Triforce Shard", player, 8))
-    set_rule(world.get_location("Hyrule - Master Sword Chamber", player), lambda state: state.has("Progressive Bow", player, 2) or state.has("Progressive Sword", player, 1))
+    set_rule(world.get_location("Hyrule - Master Sword Chamber", player), lambda state: state.has("Progressive Bow", player, 3) or state.has("Progressive Sword", player, 1))
 
     set_rule(world.get_entrance("Forsaken Fortress Interior Entrance", player), lambda state: state.has("Bombs", player))
     set_rule(world.get_location("Forsaken Fortress - Phantom Ganon", player), lambda state: state.has("Progressive Sword", player, 2))
