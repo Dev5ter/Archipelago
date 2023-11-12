@@ -177,26 +177,27 @@ def give_heart_container():
     time.sleep(0.05)
 
 def give_hero_charm():
-    dme.write_byte(0x803C4CC0, 1)
+    charm = dme.read_byte(0x803C4CC0)
+    if charm <= 1:
+        dme.write_byte(0x803C4CC0, 1)
 
 def give_pearl(pearl: str):
-    address1 = 0x803C4CC7
-    address2 = 0x803C5240
-    value = dme.read_byte(address1)
-    place = dme.read_byte(address2)
+    pearl_inventory = 0x803C4CC7
+    pearl_placed = 0x803C5240
+    value = dme.read_byte(pearl_inventory)
+    place = dme.read_byte(pearl_placed)
     if pearl == "Din's Pearl":
-        dme.write_byte(address1, value | 2)
-        place += 128
-        dme.write_byte(address2, place)
+        value |= 2
+        place |= 0x80
     elif pearl == "Nayru's Pearl":
-        dme.write_byte(address1, value | 1)
-        place += 16
-        dme.write_byte(address2, place)
+        value |= 1
+        place |= 0x10
     elif pearl == "Farore's Pearl":
-        dme.write_byte(address1, value | 4)
-        place += 64
-        dme.write_byte(address2, place)
-    if place == 208:
+        value |= 4
+        place |= 0x40
+    dme.write_byte(pearl_placed, place)
+    dme.write_byte(pearl_inventory, value)
+    if value == 7:
         dme.write_byte(0x803C524A, 64)
 
 def give_ghost_ship():
